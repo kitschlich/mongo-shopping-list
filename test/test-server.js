@@ -18,7 +18,7 @@ describe('Shopping List', function() {
         server.runServer(function() {
             Item.create({name: 'Broad beans'},
                         {name: 'Tomatoes'},
-                        {name: 'Peppers'}, {ordered: true}, function() {
+                        {name: 'Peppers'}, function() {
                 done();
              });
         });
@@ -37,8 +37,8 @@ describe('Shopping List', function() {
                 res.body[0]._id.should.be.a('string');
                 res.body[0].name.should.be.a('string');
                 res.body[0].name.should.equal('Broad beans');
-                res.body[1].name.should.equal('Tomatoes');
-                res.body[2].name.should.equal('Peppers');
+                res.body[1].name.should.equal('Peppers');
+                res.body[2].name.should.equal('Tomatoes');
                 done();
             });
     });
@@ -61,12 +61,12 @@ describe('Shopping List', function() {
                     .end(function(err, res) {
                         res.body.should.be.a('array');
                         res.body.should.have.length(4);
-                        res.body[3].should.be.a('object');
-                        res.body[3].should.have.property('_id');
-                        res.body[3].should.have.property('name');
-                        res.body[3]._id.should.be.a('string');
-                        res.body[3].name.should.be.a('string');
-                        res.body[3].name.should.equal('Kale');
+                        res.body[1].should.be.a('object');
+                        res.body[1].should.have.property('_id');
+                        res.body[1].should.have.property('name');
+                        res.body[1]._id.should.be.a('string');
+                        res.body[1].name.should.be.a('string');
+                        res.body[1].name.should.equal('Kale');
                         done();    
                     });
             });
@@ -92,12 +92,12 @@ describe('Shopping List', function() {
                             .end(function(err, res) {
                                 res.body.should.be.a('array');
                                 res.body.should.have.length(4);
-                                res.body[2].should.be.a('object');
-                                res.body[2].should.have.property('_id');
-                                res.body[2].should.have.property('name');
-                                res.body[2]._id.should.be.a('string');
-                                res.body[2].name.should.be.a('string');
-                                res.body[2].name.should.equal('Durian');
+                                res.body[1].should.be.a('object');
+                                res.body[1].should.have.property('_id');
+                                res.body[1].should.have.property('name');
+                                res.body[1]._id.should.be.a('string');
+                                res.body[1].name.should.be.a('string');
+                                res.body[1].name.should.equal('Durian');
                                 done();
                             });
                     });
@@ -122,12 +122,12 @@ describe('Shopping List', function() {
                     .end(function(err, res) {
                         res.body.should.be.a('array');
                         res.body.should.have.length(5);
-                        res.body[4].should.be.a('object');
-                        res.body[4].should.have.property('_id');
-                        res.body[4].should.have.property('name');
-                        res.body[4]._id.should.be.a('string');
-                        res.body[4].name.should.be.a('string');
-                        res.body[4].name.should.equal('Artichokes');
+                        res.body[0].should.be.a('object');
+                        res.body[0].should.have.property('_id');
+                        res.body[0].should.have.property('name');
+                        res.body[0]._id.should.be.a('string');
+                        res.body[0].name.should.be.a('string');
+                        res.body[0].name.should.equal('Artichokes');
                         done();    
                     });
             });
@@ -146,7 +146,7 @@ describe('Shopping List', function() {
                     res.body.should.have.property('_id');
                     res.body.name.should.be.a('string');
                     res.body._id.should.be.a('string');
-                    res.body.name.should.equal('Broad beans');
+                    res.body.name.should.equal('Artichokes');
                     chai.request(app)
                         .get('/items/')
                         .end(function(err, res) {
@@ -157,7 +157,7 @@ describe('Shopping List', function() {
                             res.body[0].should.have.property('name');
                             res.body[0]._id.should.be.a('string');
                             res.body[0].name.should.be.a('string');
-                            res.body[0].name.should.equal('Tomatoes');
+                            res.body[0].name.should.equal('Broad beans');
                             done();    
                         });
                 });
