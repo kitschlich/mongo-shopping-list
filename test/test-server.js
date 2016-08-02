@@ -18,7 +18,7 @@ describe('Shopping List', function() {
         server.runServer(function() {
             Item.create({name: 'Broad beans'},
                         {name: 'Tomatoes'},
-                        {name: 'Peppers'}, function() {
+                        {name: 'Peppers'}, {ordered: true}, function() {
                 done();
              });
         });
