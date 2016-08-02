@@ -8,3 +8,10 @@ addons:
     - mongodb-3.2-precise
     packages:
     - mongodb-org-server
+deploy:
+  provider: heroku
+  api_key:
+    secure: D3yEZIEXaU44HJ5syYUB6nA9Bl6tO8CjY312txI24mtmg6/wCh4btB6IJnvx6sx0flxa+gnte+wanpdq1H90BmofRT3xp6ZaZhpBFHcxk1EzIsEO78Wy/q9EXMW3OMmNem9tokAOUf5VbmHKLZvOwsF9rCyXjSu9ceWVI+Y5MEIlI+E5vjApPRW0ng9uITaHvjlcDpBrf5mhCVdhfh7f32TolZThUkgocu3+PLEA1js8BcpjRjDr1ZkAqw/il90Ydsy/W2tSv6KlkXPzCtbdwgS23Q2TrMSlqTMefkEGRejdPJI2TEl9tU6jS7f+glCnfSeacdv7B0T7YB3u9dfGdEH2PYlYpOSN4xud0Q033idHt0tPR8SJzVJQIYHoqXQvodOnt0GBA5vYRxGZX5xl0UiiMM1/QhX3bw5ziIJhbqwnA8ONQdYioPt9DIR01rKrli23f1T8Nmqc/rpw3anAnU0CJcdZDcpDQjyQvQWSFtGfhXeinAvK6yEG/FicwCjEsxceNffRwY/N6b+q+VopCGKRzsswadnzzeMzYc2Q6aWWtZo5sv5H0UXPjzSQY7DRe3szBtw31hOAp1Ly7wFhdSajyfShEyjccGgp+M6HtiLRSR1JSd/DV6ToHgiP5NlKK4cXwQ2X0w67lSp0G4BDF20+yTL3hhTBqL0Nq8f1Qas=
+  app: young-escarpment-10551
+  on:
+    repo: kitschlich/mongo-shopping-list
